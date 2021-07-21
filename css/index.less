@@ -1,0 +1,261 @@
+// 如果要完成大屏适配，屏幕变化，自适应变化，就不能写死px单位
+// 如果要自适应缩放，rem单位
+// px => rem 单位
+// div {
+//   width: 5rem;
+//   height: 5rem;
+//   background-color: pink;
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  // 让设置padding 和 border 自动内减
+  box-sizing: border-box;
+}
+
+/* 声明字体  自定义字体 */
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: url(../images/bg.jpg) center top;
+  background-size: 100%;
+  line-height: 1.15;
+}
+
+.myheader {
+  height: 1rem;
+  background:url(../images/head_bg.png) center no-repeat;
+  background-size: 100%;
+  h1 {
+    color: white;
+    font-size: .38rem;
+    text-align: center;
+    line-height: .8rem;
+  }
+}
+
+.mainbox {
+  display: flex;
+  padding: .1rem;
+  min-width: 1024px;
+  max-width: 1920px;
+  .column {
+    flex: 3;
+  }
+  .column:nth-child(2) {
+    flex: 5;
+    margin: 0 .1rem;
+  }
+}
+
+.panel {
+  height: 3.1rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background:url(../images/line.png) rgba(255, 255, 255, 0.03);
+  background-size: 100%;
+  padding: 0 .15rem .4rem;
+  margin-bottom: .15rem;
+  position: relative;
+
+  .line-top {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0.1rem;
+      height: 0.1rem;
+      border-left: 2px solid #02a6b5;
+      border-top: 2px solid #02a6b5;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 0.1rem;
+      height: 0.1rem;
+      border-right: 2px solid #02a6b5;
+      border-top: 2px solid #02a6b5;
+    }
+  }
+
+  .line-bottom {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0.1rem;
+      height: 0.1rem;
+      border-left: 2px solid #02a6b5;
+      border-bottom: 2px solid #02a6b5;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0.1rem;
+      height: 0.1rem;
+      border-right: 2px solid #02a6b5;
+      border-bottom: 2px solid #02a6b5;
+    }
+  }
+
+  h2 {
+    height: 0.48rem;
+    line-height: .48rem;
+    color: white;
+    font-size: .2rem;
+    text-align: center;
+  }
+
+  .chart {
+    height: 2.4rem;
+  }
+}
+
+.no {
+  background-color: rgba(101, 132, 226, 0.1);
+  padding: 15px;
+  .no-hd {
+    border: 1px solid rgba(25, 186, 139, 0.17);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: .3rem;
+      height: .1rem;
+      border-top: 2px solid #02a6b5;
+      border-left: 2px solid #02a6b5;
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: .3rem;
+      height: .1rem;
+      border-bottom: 2px solid #02a6b5;
+      border-right: 2px solid #02a6b5;
+      right: 0;
+      bottom: 0;
+    }
+    ul {
+      display: flex;
+      li {
+        flex: 1;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        font-size: .7rem;
+        color: #ffeb7b;
+        font-family: electronicFont;
+        text-align: center;
+        position: relative;
+        &:first-child::after {
+          content: "";
+          position: absolute;
+          height: 50%;
+          width: 2px;
+          background: rgba(255, 255, 255, 0.2);
+          right: 0;
+          top: 25%;
+        }
+      }
+    }
+  }
+
+  .no-bd ul {
+    display: flex;
+    li {
+      flex: 1;
+      height: 0.4rem;
+      line-height: 0.4rem;
+      text-align: center;
+      font-size: 0.18rem;
+      color: rgba(255, 255, 255, 0.7);
+      padding-top: 0.1rem;
+    }
+  }
+}
+
+.map {
+  height: 8.1rem;
+  position: relative;
+  .chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 8.1rem;
+    width: 100%;
+  }
+  .map1,
+  .map2,
+  .map3 {
+    height: 5.18rem;
+    width: 5.18rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url(../images/map.png) no-repeat;
+    background-size: 100%;
+    opacity: 0.3;
+  }
+
+  .map2 {
+    height: 6.43rem;
+    width: 6.43rem;
+    background-image: url(../images/lbx.png);
+    animation: rotate 15s linear infinite; 
+    opacity: 0.6;
+  }
+
+  .map3 {
+    height: 5.66rem;
+    width: 5.66rem;
+    background-image: url(../images/jt.png);
+    animation: rotate1 10s linear infinite;
+  }
+}
+
+// 瞬时针的动画
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes rotate1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+/* 约束屏幕尺寸 如果屏幕宽度小于 1024px, 不让再缩放了 */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 53.3333px !important;
+  }
+}
+// 约束屏幕尺寸 如果屏幕宽度超过 1920px 不让他再大了
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 100px !important;
+  }
+}

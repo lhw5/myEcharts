@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 声明字体  自定义字体 */
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+li {
+  list-style: none;
+}
+body {
+  background: url(../images/bg.jpg) center top;
+  background-size: 100%;
+  line-height: 1.15;
+}
+.myheader {
+  height: 1rem;
+  background: url(../images/head_bg.png) center no-repeat;
+  background-size: 100%;
+}
+.myheader h1 {
+  color: white;
+  font-size: 0.38rem;
+  text-align: center;
+  line-height: 0.8rem;
+}
+.mainbox {
+  display: flex;
+  padding: 0.1rem;
+  min-width: 1024px;
+  max-width: 1920px;
+}
+.mainbox .column {
+  flex: 3;
+}
+.mainbox .column:nth-child(2) {
+  flex: 5;
+  margin: 0 0.1rem;
+}
+.panel {
+  height: 3.1rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background: url(../images/line.png) rgba(255, 255, 255, 0.03);
+  background-size: 100%;
+  padding: 0 0.15rem 0.4rem;
+  margin-bottom: 0.15rem;
+  position: relative;
+}
+.panel .line-top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+  border-left: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+}
+.panel .line-top::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+  border-right: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+}
+.panel .line-bottom::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+  border-left: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+}
+.panel .line-bottom::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+  border-right: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+}
+.panel h2 {
+  height: 0.48rem;
+  line-height: 0.48rem;
+  color: white;
+  font-size: 0.2rem;
+  text-align: center;
+}
+.panel .chart {
+  height: 2.4rem;
+}
+.no {
+  background-color: rgba(101, 132, 226, 0.1);
+  padding: 15px;
+}
+.no .no-hd {
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  position: relative;
+}
+.no .no-hd::before {
+  content: "";
+  position: absolute;
+  width: 0.3rem;
+  height: 0.1rem;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+  top: 0;
+  left: 0;
+}
+.no .no-hd::after {
+  content: "";
+  position: absolute;
+  width: 0.3rem;
+  height: 0.1rem;
+  border-bottom: 2px solid #02a6b5;
+  border-right: 2px solid #02a6b5;
+  right: 0;
+  bottom: 0;
+}
+.no .no-hd ul {
+  display: flex;
+}
+.no .no-hd ul li {
+  flex: 1;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.7rem;
+  color: #ffeb7b;
+  font-family: electronicFont;
+  text-align: center;
+  position: relative;
+}
+.no .no-hd ul li:first-child::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  right: 0;
+  top: 25%;
+}
+.no .no-bd ul {
+  display: flex;
+}
+.no .no-bd ul li {
+  flex: 1;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.18rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 0.1rem;
+}
+.map {
+  height: 8.1rem;
+  position: relative;
+}
+.map .chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 8.1rem;
+  width: 100%;
+}
+.map .map1,
+.map .map2,
+.map .map3 {
+  height: 5.18rem;
+  width: 5.18rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../images/map.png) no-repeat;
+  background-size: 100%;
+  opacity: 0.3;
+}
+.map .map2 {
+  height: 6.43rem;
+  width: 6.43rem;
+  background-image: url(../images/lbx.png);
+  animation: rotate 15s linear infinite;
+  opacity: 0.6;
+}
+.map .map3 {
+  height: 5.66rem;
+  width: 5.66rem;
+  background-image: url(../images/jt.png);
+  animation: rotate1 10s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes rotate1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+/* 约束屏幕尺寸 如果屏幕宽度小于 1024px, 不让再缩放了 */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 53.3333px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 100px !important;
+  }
+}
