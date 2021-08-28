@@ -12,14 +12,12 @@ li {
   list-style: none;
 }
 body {
-  background: url(../images/bg.jpg) center top;
-  background-size: 100%;
+  background: url(../images/bg.jpg) center top no-repeat;
   line-height: 1.15;
 }
 .myheader {
   height: 1rem;
   background: url(../images/head_bg.png) center no-repeat;
-  background-size: 100%;
 }
 .myheader h1 {
   color: white;
@@ -29,6 +27,7 @@ body {
 }
 .mainbox {
   display: flex;
+  margin: 0 auto;
   padding: 0.1rem;
   min-width: 1024px;
   max-width: 1920px;
@@ -39,6 +38,7 @@ body {
 .mainbox .column:nth-child(2) {
   flex: 5;
   margin: 0 0.1rem;
+  overflow: hidden;
 }
 .panel {
   height: 3.1rem;
@@ -101,7 +101,7 @@ body {
 }
 .no {
   background-color: rgba(101, 132, 226, 0.1);
-  padding: 15px;
+  padding: 0.1675rem;
 }
 .no .no-hd {
   border: 1px solid rgba(25, 186, 139, 0.17);
@@ -219,6 +219,11 @@ body {
 @media screen and (max-width: 1024px) {
   html {
     font-size: 53.3333px !important;
+    width: 1024px !important;
+    height: 576px !important;
+  }
+  .myheader{
+    min-width: 1024px;
   }
 }
 @media screen and (min-width: 1920px) {
